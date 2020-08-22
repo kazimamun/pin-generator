@@ -1,7 +1,5 @@
 //hide notification 
-document.querySelector("#not-matched").style.display = 'none';
-document.querySelector("#matched").style.display = 'none';
-document.querySelector("#try-again").style.display = 'none';
+document.querySelector(".notify").style.display = 'none';
 
 //generate random number
 const pinGenerate = document.querySelector('#pin-btn');
