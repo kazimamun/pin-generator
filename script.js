@@ -8,6 +8,11 @@ const pinGenerate = document.querySelector('#pin-btn');
 pinGenerate.addEventListener('click',()=>{
     const random =  Math.floor(Math.random() * (9999-1000)) + 1000;
     document.querySelector('#pin-monitor').value = random;
+    //second time generate new number after getting result and also below work done
+    document.getElementById('try').innerText = 3;
+    document.querySelector("#not-matched").style.display = 'none';
+    document.querySelector("#matched").style.display = 'none';
+    document.querySelector('#monitor').value = '';
 })
 
 //matching and show notification
@@ -33,3 +38,14 @@ submitBtn.addEventListener('click',function(){
         }     
     }
 })
+
+
+
+
+
+// const numberBtn = document.getElementsByClassName('button');
+// for(let i=0; i<numberBtn.length; i++){
+//     numberBtn[i].addEventListener('click',()=>{
+//         console.log(this.id);
+//     })
+// }
