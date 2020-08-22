@@ -1,7 +1,5 @@
 //hide notification 
-document.querySelector("#not-matched").style.display = 'none';
-document.querySelector("#matched").style.display = 'none';
-document.querySelector("#try-again").style.display = 'none';
+document.querySelector(".notify").style.display = 'none';
 
 //generate random number
 const pinGenerate = document.querySelector('#pin-btn');
@@ -10,8 +8,7 @@ pinGenerate.addEventListener('click',()=>{
     document.querySelector('#pin-monitor').value = random;
     //second time generate new number after getting result and also below work done
     document.getElementById('try').innerText = 3;
-    document.querySelector("#not-matched").style.display = 'none';
-    document.querySelector("#matched").style.display = 'none';
+    document.querySelector(".notify").style.display = 'none';
     document.querySelector('#monitor').value = '';
 })
 
