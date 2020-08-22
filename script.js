@@ -38,14 +38,3 @@ submitBtn.addEventListener('click',function(){
         }     
     }
 })
-
-
-
-
-
-// const numberBtn = document.getElementsByClassName('button');
-// for(let i=0; i<numberBtn.length; i++){
-//     numberBtn[i].addEventListener('click',()=>{
-//         console.log(this.id);
-//     })
-// }
