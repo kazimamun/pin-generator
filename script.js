@@ -27,20 +27,24 @@ submitBtn.addEventListener('click',function(){
     const inputMonitor = document.querySelector('#monitor').value;
 
     let countdown = parseInt(document.getElementById('try').innerText);
-    if(pinMonitor == inputMonitor){
-        blockDisplay("#matched");
-        hideFromDisplay('#not-matched');
+    if(document.getElementById('monitor').value == ''){
+        alert('please input some value');
     }else{
-        blockDisplay('#not-matched');
-        hideFromDisplay("#matched");
-
-        if(countdown <= 0){
-            document.getElementById('submit').disabled  = true;
-            blockDisplay("#try-again");
+        if(pinMonitor == inputMonitor){
+            blockDisplay("#matched");
             hideFromDisplay('#not-matched');
         }else{
-            document.getElementById('try').innerText = countdown - 1;
-        }     
+            blockDisplay('#not-matched');
+            hideFromDisplay("#matched");
+    
+            if(countdown <= 0){
+                document.getElementById('submit').disabled  = true;
+                blockDisplay("#try-again");
+                hideFromDisplay('#not-matched');
+            }else{
+                document.getElementById('try').innerText = countdown - 1;
+            }     
+        }
     }
 })
 
