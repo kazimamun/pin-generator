@@ -1,5 +1,13 @@
 hideFromDisplay("#not-matched", "#matched", "#try-again")
 
+const numberBtn = document.querySelectorAll('.button');
+for(let i=0; i<numberBtn.length; i++){
+    const number = numberBtn[i];
+    number.addEventListener('click',()=>{
+        document.getElementById('monitor').value += number.id;
+    })
+}
+
 //generate random number
 const pinGenerate = document.querySelector('#pin-btn');
 pinGenerate.addEventListener('click',()=>{
@@ -20,15 +28,15 @@ submitBtn.addEventListener('click',function(){
 
     let countdown = parseInt(document.getElementById('try').innerText);
     if(pinMonitor == inputMonitor){
-        document.querySelector("#matched").style.display = 'block';
+        blockDisplay("#matched");
         hideFromDisplay('#not-matched');
     }else{
-        document.querySelector('#not-matched').style.display = 'block';
+        blockDisplay('#not-matched');
         hideFromDisplay("#matched");
 
         if(countdown <= 0){
             document.getElementById('submit').disabled  = true;
-            document.querySelector("#try-again").style.display = 'block';
+            blockDisplay("#try-again");
             hideFromDisplay('#not-matched');
         }else{
             document.getElementById('try').innerText = countdown - 1;
@@ -42,4 +50,9 @@ function hideFromDisplay(){
     args.map(arg => {
         document.querySelector(arg).style.display = 'none';
     })
+}
+
+//display block
+function blockDisplay(id){
+    document.querySelector(id).style.display = 'block';
 }
