@@ -1,10 +1,9 @@
 hideFromDisplay("#not-matched", "#matched", "#try-again")
 
 const numberBtn = document.querySelectorAll('.button');
-for(let i=0; i<numberBtn.length; i++){
-    const number = numberBtn[i];
+for(let number of numberBtn){
     number.addEventListener('click',()=>{
-        document.getElementById('monitor').value += number.id;
+            document.getElementById('monitor').value += number.id;      
     })
 }
 
